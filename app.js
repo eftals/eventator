@@ -32,22 +32,17 @@ app.configure(function(){
     app.use(express.json());
     app.use(express.urlencoded());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, '/public')));
     app.use(express.static(path.join(__dirname + '/public/stylesheets')));
+    app.use(express.static(path.join(__dirname + '/views')));
     app.engine('html', require('ejs').renderFile);
 });
 
 
 //setup passport
-require('./routes/passport.js')(passport, db)
+require('./routes/passport.js')(passport, db);
 
 
-//setup listeners
-app.get('/userlist', routes.userlist(db));
-app.get('/', routes.login);
-app.get('/users', user.list);
-app.get('/newuser', routes.newuser);
-app.post('/adduser', routes.adduser(db));
 app.get('/login', routes.login);
 app.get('/landing', routes.landing);
 app.post('/login', 
