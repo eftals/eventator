@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.banner
+{
+	height: 100px;
+	width: 100%;
+	float: top;
+	background-color: #69C;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.banner a
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000;
+	font-size:14px;
+	float:right;
+	margin-top:80;
+	margin-right:10;
+}
+
+.banner a:hover
+{
+	background-color:#F30;
+	color:#0F9;
+}
+
+.leftlinks
+{
+	width:100px;
+	height:100%;
+	float:left;
+	background-color:#6FC;
+}
+
+.leftlinks ul
+{
+	margin-left:-20px;
+	position:relative;
+}
+
+.leftlinks a:hover
+{
+	color:red;
+}
+
+.rightnavigation
+{
+	width:150px;
+	height:100%;
+	float:right;
+	background-color:#999
+}
+
+.rightnavigation p
+{
+	position:absolute;
+	bottom:20px;
+	margin-left:10px;
+	
+}
