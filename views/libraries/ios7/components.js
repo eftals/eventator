@@ -591,7 +591,7 @@ prx.types.ios7_statusbar = {
 		cR += '<div class="ios7-statusbar-signal-dot liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-signal-dot liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-signal-dot ios7-statusbar-signal-dot-empty liveUpdate-foregroundColor-border-color"></div>';
-		cR += '<div class="ios7-statusbar-provider">PROTO.IO</div>';
+		cR += '<div class="ios7-statusbar-provider">Eventator</div>';
 		cR += '</div>';
 		cR += '<div class="ios7-statusbar-time">16:20</div>';
 		cR += '<div class="ios7-statusbar-battery-life">';
