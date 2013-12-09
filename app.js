@@ -24,7 +24,7 @@ app.configure(function(){
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(app.router);
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', process.env.PORT || 8080);
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs');
     app.use(express.favicon());
@@ -42,7 +42,7 @@ app.configure(function(){
 //setup passport
 require('./routes/passport.js')(passport, db);
 
-
+app.get('/', routes.login);
 app.get('/login', routes.login);
 app.get('/landing', routes.landing);
 app.post('/login', 

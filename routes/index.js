@@ -8,7 +8,16 @@ exports.index = function(req, res){
 };
 
 exports.landing = function(req, res){	
-	res.render('landing', {title:'landing'});
+	if (req.isAuthenticated())
+		{
+			console.log('authenticated')
+			res.render('landing', {title:'landing'});
+		}
+	else
+		{
+			console.log('not auth')
+			index(req,res);
+		}
 };
 
 exports.login = function(req, res){
