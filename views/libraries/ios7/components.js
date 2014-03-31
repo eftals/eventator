@@ -591,7 +591,7 @@ prx.types.ios7_statusbar = {
 		cR += '<div class="ios7-statusbar-signal-dot liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-signal-dot liveUpdate-foregroundColor-background-color liveUpdate-foregroundColor-border-color"></div>';
 		cR += '<div class="ios7-statusbar-signal-dot ios7-statusbar-signal-dot-empty liveUpdate-foregroundColor-border-color"></div>';
-		cR += '<div class="ios7-statusbar-provider">Eventator</div>';
+		cR += '<div class="ios7-statusbar-provider">PROTO.IO</div>';
 		cR += '</div>';
 		cR += '<div class="ios7-statusbar-time">16:20</div>';
 		cR += '<div class="ios7-statusbar-battery-life">';
@@ -3309,14 +3309,16 @@ prx.types.ios7_actionsheet = {
 		if(item.detachlast) {
 			cR += '<div class="ios7-actionsheet-buttons liveUpdate-backgroundColor liveUpdate-textColor liveUpdate-borderColor changeProperty-backgroundColor changeProperty-borderColor changeProperty-borderRadius changeProperty-borderWidth changeProperty-textColor changeProperty-textSize changeProperty-textFont">'
 			var i = item.buttons.length -1;
-			var _props = (jQuery.inArray("bold",item.buttons[i].textProperties)>-1) ? " font-weight: bold;" : "";
-			_props += (jQuery.inArray("italic",item.buttons[i].textProperties)>-1) ? " font-style: italic;" : "";
-			_props += (jQuery.inArray("underline",item.buttons[i].textProperties)>-1) ? " text-decoration: underline;" : "";
-			
-			cR += '<div id="'+_id+'-buttons-'+i+'" class="ios7-actionsheet-button dynamic-property liveUpdate-borderColor liveUpdate-textColor-'+i+' changeProperty-borderColor" data-dynamic-property-index="'+i+'" style="'+_props+' color: '+getColor(item.buttons[i].textColor)+';">';
-			cR += '<span data-editableproperty="text" data-dynamic-property-index="'+i+'">' + item.buttons[i].text + '</span>';
-			cR += '</div>';
-			cR += '</div>';
+			if(i>0) { 
+				var _props = (jQuery.inArray("bold",item.buttons[i].textProperties)>-1) ? " font-weight: bold;" : "";
+				_props += (jQuery.inArray("italic",item.buttons[i].textProperties)>-1) ? " font-style: italic;" : "";
+				_props += (jQuery.inArray("underline",item.buttons[i].textProperties)>-1) ? " text-decoration: underline;" : "";
+				
+				cR += '<div id="'+_id+'-buttons-'+i+'" class="ios7-actionsheet-button dynamic-property liveUpdate-borderColor liveUpdate-textColor-'+i+' changeProperty-borderColor" data-dynamic-property-index="'+i+'" style="'+_props+' color: '+getColor(item.buttons[i].textColor)+';">';
+				cR += '<span data-editableproperty="text" data-dynamic-property-index="'+i+'">' + item.buttons[i].text + '</span>';
+				cR += '</div>';
+				cR += '</div>';
+			}
 		}
 		cR += '</div>';
 		cR += '</div>';

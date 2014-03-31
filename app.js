@@ -8,7 +8,6 @@ var http = require('http'),
 	mongo = require('mongodb'),
 	monk = require('monk'),
 	db = monk('localhost:27017/Eventator'),
-	user = require('./routes/user');
 
    
 
@@ -24,7 +23,7 @@ app.configure(function(){
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(app.router);
-    app.set('port', process.env.PORT || 8080);
+    app.set('port', process.env.PORT || 8070);
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs');
     app.use(express.favicon());
@@ -45,6 +44,7 @@ require('./routes/passport.js')(passport, db);
 app.get('/', routes.login);
 app.get('/login', routes.login);
 app.get('/landing', routes.landing);
+app.get('/getObjects', routes.getObjects);
 app.post('/login', 
     passport.authenticate('local', { 
     	successRedirect: '/landing',

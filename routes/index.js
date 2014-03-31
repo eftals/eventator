@@ -1,4 +1,6 @@
 
+var http = require('http');
+
 /*
  * GET home page.
  */
@@ -8,21 +10,29 @@ exports.index = function(req, res){
 };
 
 exports.landing = function(req, res){	
-	if (req.isAuthenticated())
-		{
-			console.log('authenticated')
-			res.render('landing', {title:'landing'});
-		}
-	else
-		{
-			console.log('not auth')
-			index(req,res);
-		}
+	res.render('landing');
 };
 
 exports.login = function(req, res){
 	  res.render('login', { title: 'Login' });
 	};
+
+exports.getObjects = function(req, response){
+
+   http.get("http://localhost:8080/fedora/objects?pid=true&title=true&terms=&query=&resultFormat=xml", 
+    function(res) {
+        console.log("Got response: " + res.statusCode);
+         res.on('data', function (chunk) {
+            response.write(chunk);
+         console.log('BODY: ' + chunk);
+        });
+         res.on('end', function(){
+            response.end();
+         });
+    }).on('error', function(e) {
+        console.log("Got error: " + e.message);
+    });
+};
 
 
 exports.userlist = function(db) {

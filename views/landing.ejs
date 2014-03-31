@@ -1,464 +1,185 @@
-
-
-
-<!doctype html>
-	<head>
-		<meta charset="utf-8">
-
-		<title>Eventator</title>
-
-			<meta name="HandheldFriendly" content="True">
-			<meta name="MobileOptimized" content="#width#">
-
-
-
-
-			<meta name="viewport" content="width=device-width, minimum-scale=0.50, maximum-scale=0.50, initial-scale=0.50, user-scalable=no, target-densitydpi=device-dpi" />
-				<meta name="apple-mobile-web-app-capable" content="yes" />
-				<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-
-			<meta name="format-detection" content="telephone=no">
-
-
-			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/branding/apple-touch-icon-retina.png"> <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/branding/apple-touch-icon-ipad.png"/> <link rel="apple-touch-icon-precomposed" href="./assets/branding/apple-touch-icon.png"/> <link rel="shortcut icon" href="./assets/branding/apple-touch-icon.png">
-
-				        <link href="./assets/branding/startup.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-568.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-ipad.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-ipad-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-ipad-retina.png" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-
-				        <link href="./assets/branding/startup-ipad-landscape-retina.png" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-			<style>
-				body * {-webkit-text-size-adjust: 100%;}
-			</style>
-		<link rel="stylesheet" href="./stylesheets/jquery.mobile-1.3.2.min.css" /> <link rel="stylesheet" href="./stylesheets/jquery.mobile.custom.css" />
-
-		<meta http-equiv="cleartype" content="on">
-
-
-
-			<link rel="stylesheet" href="./stylesheets/style.css" />
-			<script type="text/javascript" src="./scripts/modernizr-2.0.6.min.js"></script>
-
-				<script src="./scripts/jquery-2.0.3.min.js"></script>
-				 <script src="./scripts/jquery-migrate-1.2.1.min.js"></script>
-
-				<script type="text/javascript" src="./scripts/ThrowPropsPlugin.min.js?5.2.10"></script>
-				<script type="text/javascript" src="./scripts/Draggable.min.js?5.2.10"></script>
-				<script type="text/javascript" src="./scripts/TweenMax.min.js?5.2.10"></script>
-				<script type="text/javascript" src="./scripts/CSSPlugin.min.js?5.2.10"></script>
-
-				<script type="text/javascript" src="./scripts/jquery.json-2.2.min.js"></script>
-				<script type="text/javascript" src="./scripts/iscroll-zoom.js"></script>
-				<script type="text/javascript" src="./scripts/jquery-ui-1.9.1.draggable.min.js"></script>
-				<script type="text/javascript" src="./scripts/cssGenerator.js"></script>
-				<link rel="stylesheet" href="./stylesheets/player2.css" />
-
-				<script type="text/javascript" src="./scripts/jquery.ui.ipad.altfix.js"></script>
-				<script type="text/javascript" src="./scripts/jsondiffpatch.js"></script>
-
-				<script type="text/javascript" src="./scripts/player2.min.js"></script>
-
-				<link type="text/css" href="./libraries/common/components.css" rel="Stylesheet" />
-				<script type="text/javascript" src="./libraries/common/components.js"></script>
-
-
-						<link type="text/css" href="./libraries/iphone_retina/components.css" rel="Stylesheet" />
-						<script type="text/javascript" src="./libraries/iphone_retina/components.js"></script>
-
-						<link type="text/css" href="./libraries/icons/components.css" rel="Stylesheet" />
-						<script type="text/javascript" src="./libraries/icons/components.js"></script>
-
-						<link type="text/css" href="./libraries/ios7/components.css" rel="Stylesheet" />
-						<script type="text/javascript" src="./libraries/ios7/components.js"></script>
-
-
-				<script type="text/javascript" src="./data/data.js"></script>
-
-				<script src="./scripts/jquery.mobile-1.3.2.min.js"></script>
-				<script type="text/javascript" src="./scripts/swipeupdown.js"></script>
-				<script src="./scripts/jquery.mobile.custom.js"></script>
-				<script type="text/javascript" src="./scripts/jquery.transit.js"></script>
-				<script type="text/javascript" src="./scripts/jquery.hammer.min.js"></script>
-
-		<style>
-
-			body .ui-page {-webkit-transform:translate3d(0,0,0);} /* FIX JQUERYMOBILE TRANSITION FLICKER BUG */
-
-			.ui-page { -webkit-backface-visibility: hidden; } /* FIX JQUERYMOBILE TRANSITION FLICKER BUG */
-
-			.landscape, .landscape .ui-page {
-				min-height: 640px;
-			}
-
-			.portrait, .portrait .ui-page {
-				min-height: 1136px;
-			}
-
-			/* MAKE CLICK AREA TRANSPARENT */
-			.type-actionarea .inner-rec div {
-				background: none;
-			}
-
-			.type-actionarea .inner-rec div:before {
-				display: none;
-			}
-
-			.type-animationtarget {
-				opacity: 0!important;
-				pointer-events: none;
-			}
-
-			html {
-				background: transparent;
-			}
-
-
-
-			#dragarea { background: transparent; }
-
-			.hide { display: none!important; }
-
-			.ui-body-c {
-				background: none;
-			}
-
-			* {
-				outline: none;
-			}
-
-			.ghost-component {
-				pointer-events: none;
-			}
-
-
-				#loader {
-					background-image: url(images/editor/loader.gif);
-				}
-
-
-			.ui-mobile .ui-page {
-				o!verflow: hidden;
-				position: fixed;
-			}
-
-			#statusbar {
-				position: fixed;
-			}
-		</style>
-
-			<script type="text/javascript">
-				var _orientation = window.innerWidth>window.innerHeight?"landscape":"portrait";
-				var _windoworientation = window.orientation;
-
-
-
-				if (window.screen.height==568) { // iPhone 4 (iPhone5/iOS6)
-
-					//document.querySelector("meta[name=viewport]").content="width=320.1";
-					document.querySelector("meta[name=viewport]").content="width=320.1, minimum-scale=0.50, maximum-scale=0.50, initial-scale=0.50, user-scalable=no, target-densitydpi=device-dpi";
-				}
-
-					var sLinkedAssets = [];
-
-						sLinkedAssets["pde83e780-1c94-4b51-96ea-be6b791437f6_33949cd6fa9a991fb7871ed8775d4c49.jpg"]="http://dreamyard.com/wp-content/uploads/2012/11/Mic.jpg";
-
-						sLinkedAssets["pde83e780-1c94-4b51-96ea-be6b791437f6_3471d3bbc41c4a122dd353ecddbcccac.jpg"]="http://www.watershed.co.uk/sites/default/files/imagecache/main-500/sites/default/files/ws_media_sets/content/media_sets/2012/06/ms00005613/display.jpg";
-
-
-
-
-
-				prx.url['account'] = 'https://websysapp.proto.io';
-				prx.url['staticassets'] = 'https://s3.amazonaws.com/gallery.proto.io';
-
-
-
-					prx.device = 'default';
-
-
-				prx.device_library = 'ios7';
-				prx.devices[prx.device] = {
-						name: prx.device
-						,caption: "iPhone 5/5S/5C (640x1136)"
-						,defaultOrientation: 'portrait'
-						,portrait_applies: 1 //new
-						,portrait: [640,1136]
-						,landscape_applies: 1 //new
-						,landscape: [1136,640]
-						,allow_orientation_change: 1 //new
-						,statusbar_skin: 'shared' // new
-						,statusbarheightportrait: 40
-						,statusbarheightlandscape: 40
-						,navigationbar_skin: 'default' //new
-						,navigationbarheightportrait: 0
-						,navigationbarheightlandscape: 0
-
-						,normalportrait: [640,1136]
-						,normallandscape: [1136,640]
-						//,device_uuid: ['f2b0a5a2-27e8-47b3-977a-cc21325d0d37']
-						,device_uuid: 'f2b0a5a2-27e8-47b3-977a-cc21325d0d37'
-
-				}
-
-				//log(prx.devices);
-
-				prx.mobilebrowser = !0;
-
-
-				prx.embed = 0;
-
-
-
-
-
-
-
-				$(document).one("mobileinit", function(){
-				  $.mobile.allowCrossDomainPages = true;
-				  $.mobile.defaultHomeScroll = 0;
-				  $.mobile.ajaxEnabled = false;
-				  $.mobile.touchOverflowEnabled = true;
-				  $.mobile.defaultPageTransition = 'none';
-				  $.mobile.defaultDialogTransition = 'none';
-				  $.mobile.ignoreContentEnabled=true;
-
-
-				  /*
-				  $.extend($.mobile, {
-
-				  });
-				  */
-				});
-
-
-
-				prx.filename = 'de83e780-1c94-4b51-96ea-be6b791437f6';
-				prx.ron = '0'; // Reviewers LIVE PREVIEW is ON
-				prx.url.devices = 'https://staticprotoio-proto.netdna-ssl.com/devices';
-				prx.save = 'false';
-
-				prx.statusbar = '1';
-				prx.statusbarapplies = '1';
-
-				prx.navigationbar = '0';
-				prx.navigationbarapplies = '0';
-
-
-				prx.url.static = 'https://staticprotoio-proto.netdna-ssl.com';
-				prx.vup = '1';
-
-					prx.v = '0';
-
-				prx.rl = '1';
-				prx.s3b = 'websysapp-54357-proto';
-				prx.projectid = 'de83e780-1c94-4b51-96ea-be6b791437f6';
-				prx.initialpageid = false;
-				prx.deviceorientation = 'portrait';
-				prx.export2html = '1';
-
-
-
-					function getAssetUrl(asset) {
-						var assetType = asset.assetType;
-						var url = asset.url;
-
-						if (typeof(asset.targetSrc) != "undefined") {
-							url =  './assets/' + asset.targetSrc;
-						} else {
-							url =  './assets/' + url;
-						}
-
-						//linked assets
-						if (asset.assetType == "project") {
-							if (typeof(sLinkedAssets["pde83e780-1c94-4b51-96ea-be6b791437f6_"+asset.fileId]) != "undefined") {
-								url = sLinkedAssets["pde83e780-1c94-4b51-96ea-be6b791437f6_"+asset.fileId];
-							}
-						}
-
-						if (asset.assetType == "account") {
-							if (typeof(sLinkedAssets["p_"+asset.fileId]) != "undefined") {
-								url = sLinkedAssets["p_"+asset.fileId];
-							}
-						}
-
-						return url;
-					}
-
-
-
-
-
-				//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-				$(document).ready(function(){
-
-
-
-
-
-
-
-					if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad|android/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
-						//prx.mobilebrowser = true;
-						_agents = navigator.userAgent.toLowerCase().match(/(android)/g); // Android
-						if (!_agents) {
-							$('body').prepend("<style>.box { -webkit-backface-visibility: hidden; }</style>");
-						}
-					}
-
-
-
-
-
-					$("[data-role=page]").focus(function(){ return false;}); // Fix for jQuery Mobile push to top on transition
-
-			 		var _deviceOrientation = ($(window).width() < $(window).height()) ? "portrait" : "landscape";
-
-
-					// STATUSBAR = TOP BAR
-					if (prx.statusbarapplies) {
-						prx.allowstatusbar = true;
-					} else {
-						prx.allowstatusbar = false;
-					}
-
-
-					if (prx.allowstatusbar) {
-						// CHECK STATUSBAR ON IOS
-						var _agents = navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad)/g); // iOS
-						if (_agents) {
-							// if in safari, false, if in add to home, true
-							var _standalone = window.navigator.standalone ? true:false;
-							if(_standalone) {
-							 	// ANNAM 5.2.3 for ios7 translucent statusbars
-							 	// if standalone ios, always allow statusbar
-								//prx.allowstatusbar = false;
-								prx.allowstatusbar = true;
-								prx.devices[prx.device].statusbar_skin = 'default';
-								$('body').prepend("<style>.type-ios7-statusbar .ios7-statusbar-inner * { display: none; }</style>");
-							} else {
-
-
-						 		// if not fullscreen then disable statusbar
-						 		if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
-									prx.allowstatusbar = false;
-						 		}
-						 	}
-						}
-
-						// CHECK STATUSBAR ON ANDROID
-						try {
-							_agents = navigator.userAgent.toLowerCase().match(/(android)/g); // Android
-							if (_agents) {
-								// if not fullscreen then disable statusbar
-						 		if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
-									prx.allowstatusbar = false;
-						 		}
-							}
-						} catch(err) {alert(err)}
-					}
-
-
-
-					// NAVIGATION BAR = BOTTOM BAR
-					if (prx.navigationbarapplies) {
-						prx.allownavigationbar = true;
-					} else {
-						prx.allownavigationbar = false;
-					}
-
-
-					var _agents = navigator.userAgent.toLowerCase().match(/(android)/g);
-					if (_agents) {
-						try {
-							if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
-								prx.allownavigationbar = false;
-					 		}
-				 		} catch(err) {alert(err)}
-					}
-
-
-
-
-					$('#dragarea').css('width',$(window).width()+'px');
-					$('#dragarea').css('height',$(window).height()+'px');
-
-					$(window).resize(function() {
-						$('#dragarea').css('width',$(window).width()+'px');
-						$('#dragarea').css('height',$(window).height()+'px');
-					})
-
-
-
-
-
-					if (typeof(prx.xdata) != "undefined") {
-						prx.xdata = $.toJSON(prx.xdata);
-					}
-
-					prx.s3Links = {};
-
-					prx.loadProject(prx.filename);
-
-					//$('html').removeClass('min-width-320px min-width-480px min-width-768px min-width-768px min-width-1024px min-width-1024px');
-
-
-						MBP.hideUrlBar();
-
-				
-				
-					//$('#p-1').hide();
-					//$('#p-2').show();
-
-
-
-
-				});
-			</script>
-
-	</head>
-
-	<body oncontextmenu="return false;" class="player" style="overflow: hidden; width: 640px; height: 1136px;" id="mbd">
-
-
-
-		<div id="window-wrapper" style="width: 100%; height: 100%; overflow: hidden; position: relative">
-			<div id="dragarea" style="display:block;"></div>
-			<div id="statusbar"></div>
-
-			<div data-role="page" id="p-1" data-id="1"></div> <div data-role="page" id="p-2" data-id="2"></div> <div data-role="page" id="p-6" data-id="6"></div> <div data-role="page" id="p-7" data-id="7"></div> <div data-role="page" id="p-9" data-id="9"></div> <div data-role="page" id="p-10" data-id="10"></div> <div data-role="page" id="p-11" data-id="11"></div>
-			<div id="navigationbar"></div>
-
-
-			<div id="overlay" style="position: absolute; top:40px;left:0px;"></div> <div id="trash" style="position: absolute; left:0px; display: block;"></div>
-
-			<div id="loader-wrapper">
-				<div id="loader">
-					<span>Loading...</span>
-				</div>
-			</div>
-		</div>
-
-
-
-				<script type="text/javascript" src="./scripts/helper.js"></script>
-
-
-	</body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript" src="SpryAssets/SpryAccordion.js"></script>
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47068998-1', 'nyu.edu');
+  ga('send', 'pageview');
+
+</script>
+<title>Eftal's Homepage</title>
+<script type="text/javascript">
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+var msgout;
+function writeMessage(canvasNme, message) {
+      
+        var canvas = document.getElementById(canvasNme);
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(message, 10, 25);
+   
+      }
+      
+function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+
+function dot(evt) {
+      var canvas = document.getElementById('MyCanvas');
+      var ctx = canvas.getContext('2d');
+      var mpos= getMousePos(canvas, evt);
+      ctx.fillRect(mpos.x,mpos.y,2,2);
+}
+
+    function getObjects(evt)
+    {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 & xhr.status==200) {
+          document.getElementById("respelement").innerHTML = xhr.responseText;
+          console.log(xhr.responseText);
+                      
+        } 
+      else if (xhr.readyState == 4 & xhr.status==404)
+      {
+        document.getElementById('respelement').innerHTML = "Received 404";
+        console.log("Received 404");  
+      }
+      }
+      var oForm = document.forms['lsstud'];
+      
+      
+      var cmd = '/getObjects'
+
+
+      console.log('cmd is: ' + cmd);
+      xhr.open('GET', cmd, true);
+      xhr.send(null);
+      console.log('cmd sent');
+    }
+
+  
+ 
+</script>
+</head>
+
+<body>
+<div class="container">
+  <div class="content">
+    <div class="bannerArea">
+      <div class="bannernav"> <a href="mailto:inferis25@yahoo.com?subject=NoSpam" >Contact Us</a> | <a href="#" >Site Info</a></div>
+      <div class="toplogo"><a href="#">
+        <h1>This is my banner area - need a nice image here</h1>
+        </a></div>
+    </div>
+    <ul id="Type" class="leftnavigation">
+      <li><a href="http://www.drdobbs.com/" >Dr. Dobbs</a></li>
+      <li><a href="http://www.sencha.com/" >Sencha - the Best JS Lib</a></li>
+      <li><a href="http://emberjs.com/" >EMMMMBEEER!!!!</a></li>
+    </ul>
+    <div class="contentleft">
+      <div>
+            <form id='lsstud'>
+              <p>This form will <i><font color='red'>asynchronously</font></i> generate a listing of
+              the websys sub-directory
+              for a Stern Student. </p>
+              
+                <input type="text" name="userid" size="8">
+                (i.e. 
+                vyr200) </p>
+            </form>
+            
+            <button onClick="getObjects(event)">Get Fedora Objects</button>
+       </div><p>
+          <textarea id='respelement' padding="0" cols=60 rows=20 readonly >This is where request contents will be listed</textarea></p>
+           </div>
+    <div class="contentright">
+      <div id="SpryAccordion1" class="Accordion" tabindex="0">
+        <div class="AccordionPanel">
+          <div class="AccordionPanelTab tabTop">
+            <div class="accordion_340_tab"> Professional Background </div>
+          </div>
+          <div class="AccordionPanelContent">
+            <div class="acontent">
+              <p>Current Technology Lead at world's top hedge fund</p>
+              <p>Previously, Application Portfolio Manager at a European Investment Bank</p>
+              <p>Career started in various Equity Research Firms</p>
+              <p>I lost a bet, now I am doing MBA</p>
+            </div>
+          </div>
+        </div>
+        <div class="AccordionPanel">
+          <div class="AccordionPanelTab middleTab">
+            <div> My view of technology </div>
+          </div>
+          <div class="AccordionPanelContent">
+            <div class="acontent">
+              <p>I think JAVASCRIPT is the future of UI development.</p>
+              <p>All major websites (Fbook, Google, MSDN) are in JS.</p>
+              <p>Even Windows 8 uses JS in the UI.</p>
+              <p>Desktop application development will die,
+                along with desktops and related frameworks such as C# WPF/Winforms and JAVA Spring</p>
+              <p>A day will come and everyone will use workPads (oversized IPAD, Surface, ETC)</p>
+              <p>Cubicle workPads will be much bigger than portable devices
+                and have wireless keyboards</p>
+              <p>Technologists, like yours truly, will develop apps that allow view and transformation of data using these giant workPads.  Imagine swiping your screen at work?  It will be great.  I am here to a get a jumpstart.</p>
+            </div>
+          </div>
+        </div>
+        <div class="AccordionPanel">
+          <div class="AccordionPanelTab middleTab">
+            <div> Technical Skills </div>
+          </div>
+          <div class="AccordionPanelContent">
+            <div class="acontent">
+              <p>Expertee on C# and .NET Framework Desktop Applications (WPF/Winforms)</p>
+              <p>Well versed in ASP.NET</p>
+              <p>JAVA, C/C++, COM/DCOM, Web and Windows Services</p>
+              <p>Relational Databases: SQL Server, Oracle, Sybase</p>
+            </div>
+          </div>
+        </div>
+        <div class="AccordionPanel">
+          <div class="AccordionPanelTab middleTab">
+            <div class="accordion_340_tab"> Welcome </div>
+          </div>
+          <div class="AccordionPanelContent">
+            <div class="acontent">
+              <p>This is my HW2.  I am using it as a dashboard to try out different JS content that I will eventually use for my final project.  So far I have a canvas that is listening mouse events and an accordion.  I copied the CSS stylesheets and left navigation from an opensource DW6 template.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="AccordionBottom"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+</div>
+<td padding="0" onMouseOver="writeMessage('MyCanvas', 'Tracing Mouse...')"
+ onMouseMove="dot(event)" colspan="2" ><canvas  id="MyCanvas" height="300" width=400/></td>
+< 
+<script type="text/javascript">
+<!--
+var SpryAccordion1 = new Spry.Widget.Accordion("SpryAccordion1", {useFixedPanelHeights:false, defaultPanel:3});
+//-->
+    </script>
+</body>
 </html>

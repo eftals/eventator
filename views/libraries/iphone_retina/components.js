@@ -1645,7 +1645,7 @@ prx.types.label_retina = {
 		var _italic = (jQuery.inArray("italic",item.textProperties)>-1) ? " font-style: italic;" : "";
 		var _underline = (jQuery.inArray("underline",item.textProperties)>-1) ? " text-decoration: underline;" : "";
 		var _shadow = (item.enableShadow) ? " text-shadow: 0 1px 0 #FFFFFF;" : "";
-		var cReturn = '<div id="' + _id + '" class="box pos type-text-retina liveUpdate-textColor liveUpdate-backgroundColor changeProperty-backgroundColor changeProperty-textColor changeProperty-textFont changeProperty-textSize changeProperty-textAlign" style="color: '+getColor(item.textColor)+'; '+getFontCssFromFontFamily(item.textFont)+' font-size: '+item.textSize+'px; background-color: '+getColor(item.backgroundColor)+'; '+_bold+_italic+_underline+_shadow+' text-align: '+item.textAlign+'; "><div style="overflow: hidden; width: 100%; height: 100%;"><span data-editableproperty="text">'+item.text+'</span></div></div>';
+		var cReturn = '<div id="' + _id + '" class="box pos type-text-retina liveUpdate-textColor liveUpdate-backgroundColor changeProperty-backgroundColor changeProperty-textColor changeProperty-textFont changeProperty-textSize changeProperty-textAlign" style="color: '+getColor(item.textColor)+'; '+getFontCssFromFontFamily(item.textFont)+' font-size: '+item.textSize+'px; background-color: '+getColor(item.backgroundColor)+'; '+_bold+_italic+_underline+_shadow+' text-align: '+item.textAlign+'; "><div class="changeProperty-text" style="overflow: hidden; width: 100%; height: 100%;"><span data-editableproperty="text">'+item.text+'</span></div></div>';
 		return cReturn;
 	}
 

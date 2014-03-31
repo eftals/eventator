@@ -382,7 +382,7 @@ prx.types.text = {
 		var _italic = (jQuery.inArray("italic",item.textProperties)>-1) ? " font-style: italic;" : "";
 		var _underline = (jQuery.inArray("underline",item.textProperties)>-1) ? " text-decoration: underline;" : "";
 		var _shadow = (item.enableShadow) ? " text-shadow: 0 1px 0 #FFFFFF;" : "";
-		var cReturn = '<div id="' + _id + '" class="box pos type-text liveUpdate-textColor liveUpdate-backgroundColor changeProperty-backgroundColor changeProperty-textAlign" style="line-height: 1.231; color: '+getColor(item.textColor)+'; '+getFontCssFromFontFamily(item.textFont)+' font-size: '+item.textSize+'px; background-color: '+getColor(item.backgroundColor)+'; '+_bold+_italic+_underline+_shadow+' text-align: '+item.textAlign+';"><div class="text-contents"> <span data-editableproperty="text" '+((item.autoResize) ? 'class="autoresize"' : '')+'>'+item.text+'</span></div></div>';
+		var cReturn = '<div id="' + _id + '" class="box pos type-text liveUpdate-textColor changeProperty-textColor liveUpdate-backgroundColor changeProperty-backgroundColor changeProperty-textAlign" style="line-height: 1.231; color: '+getColor(item.textColor)+'; '+getFontCssFromFontFamily(item.textFont)+' font-size: '+item.textSize+'px; background-color: '+getColor(item.backgroundColor)+'; '+_bold+_italic+_underline+_shadow+' text-align: '+item.textAlign+';"><div class="text-contents"> <span data-editableproperty="text" '+((item.autoResize) ? 'class="autoresize"' : '')+'>'+item.text+'</span></div></div>';
 		return cReturn;
 	}
 	,editableProperties: [
