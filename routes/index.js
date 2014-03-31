@@ -1,5 +1,6 @@
 
 var http = require('http');
+var url = require('url');
 
 /*
  * GET home page.
@@ -24,7 +25,6 @@ exports.getObjects = function(req, response){
         console.log("Got response: " + res.statusCode);
          res.on('data', function (chunk) {
             response.write(chunk);
-         console.log('BODY: ' + chunk);
         });
          res.on('end', function(){
             response.end();
@@ -34,6 +34,25 @@ exports.getObjects = function(req, response){
     });
 };
 
+exports.findObject = function(request, response){
+
+   var url_parts = url.parse(request.url, true);
+   var query = "http://localhost:8080/fedora/objects?pid=true&title=true&query=&resultFormat=xml&terms=" +
+                url_parts.query.object;
+   console.log(query);
+   http.get(query, 
+    function(res) {
+        console.log("Got response: " + res.statusCode);
+         res.on('data', function (chunk) {
+            response.write(chunk);
+        });
+         res.on('end', function(){
+            response.end();
+         });
+    }).on('error', function(e) {
+        console.log("Got error: " + e.message);
+    });
+};
 
 exports.userlist = function(db) {
     return function(req, res) {

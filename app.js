@@ -45,6 +45,7 @@ app.get('/', routes.login);
 app.get('/login', routes.login);
 app.get('/landing', routes.landing);
 app.get('/getObjects', routes.getObjects);
+app.get('/findObject', routes.findObject);
 app.post('/login', 
     passport.authenticate('local', { 
     	successRedirect: '/landing',
